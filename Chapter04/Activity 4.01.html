@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Online Property Portal Website Form</title>
+        <style type="text/css">
+            
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            fieldset{
+                padding: 0;
+                border:0;
+                width: 900px;
+            }
+            fieldset div{
+                margin-bottom: 30px;
+            }
+            label{
+                display: block;
+                margin-bottom: 10px;
+            }
+            input, select{
+                border: 1px solid gray;
+                padding: 10px;
+                width: 200px;
+            }
+            select{
+                background: transparent;
+                border-radius: 0;
+                box-shadow: none;
+                color: #666;
+                -webkit-appearance: none;
+                width: 100%;
+            }
+            .select-wrapper{
+                position: relative;
+                width: 100%;
+            }
+            .select-wrapper::after{
+                content: "<>";
+                color: #666;
+                font-size: 14px;
+                top: 8px;
+                right: 0;
+                transform: rotate(90deg);
+                position: absolute;
+                text-transform:uppercase;
+            }
+            button{
+                background-color: green;
+                border: 0;
+                color: white;
+                width: 224px;
+                padding: 10px;
+                text-transform: uppercase;
+            }
+            .row, .item{
+                display: flex;
+            }
+            .item{
+                margin-bottom: 10px;
+                margin-right: 30px;
+            }
+            .row div{
+                flex-basis: 50%;
+            }
+            label{
+                margin-right: 15px;
+                line-height: 35px;
+                width: 150px;
+            }
+            .checkbox{
+                width: auto;
+                margin-left: 122px;
+                margin-right: 10px;
+            }
+            .checkbox + label{
+                width: auto;
+                line-height: 20px;
+            }
+            button{
+                float: right;
+            }
+            select:valid{
+                border: 2px solid  green;
+            }
+            select:invalid{
+                border: 2px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="url_to_send_form_data" method="POST">
+            <fieldset>
+                <h2>Property for sale in London</h2>
+                <div class="row">
+                    <div>
+                        <div class="item">
+                            <label for="radius">Search radius:</label>
+                            <div class="select-wrapper">
+                                <select id="radius" required>
+                                    <option value="only">This area only</option>
+                                    <option value="1">1 mile</option>
+                                    <option value="5">5 miles</option>
+                                    <option value="10">10 miles</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <label for="radius">Price range:</label>
+                            <div class="select-wrapper">
+                                <select id="price" required>
+                                    <option value="any">Any</option>
+                                    <option value="100">Up to 100k</option>
+                                    <option value="250">Up to 250k</option>
+                                    <option value="500">Up to 500k</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <label for="bedrooms">Bedrooms:</label>
+                            <div class="select-wrapper">
+                                <select id="bedrooms" required>
+                                    <option value="any">Any</option>
+                                    <option value="1">1 bed</option>
+                                    <option value="2">2 beds</option>
+                                    <option value="3">3 beds</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="item">
+                            <label for="propert">Property type:</label>
+                            <div class="select-wrapper">
+                                <select id="property" required>
+                                    <option value="any">Any</option>
+                                    <option value="flat">Flat</option>
+                                    <option value="house">House</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <label for="date">Added to site:</label>
+                            <div class="select-wrapper">
+                                <select id="date" required>
+                                    <option value="any">Anytime</option>
+                                    <option value="24">24 hours</option>
+                                    <option value="1">1 week</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <input type="checkbox" class="checkbox" id="sold" name="sold"/>
+                            <label for="sold">Include sold properties</label>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit">Find properties</button>
+            </fieldset>
+        </form>
+    </body>
+</html>
